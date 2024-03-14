@@ -1,0 +1,49 @@
+{
+  "name": "terraform-module-cloudbuild-artifact",
+  "version": "1.0.0",
+  "description": "terraform module for cloudbuild to artifact registry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandlive1941/terraform-module-cloudbuild-artifact.git"
+  },
+  "keywords": [
+    "gcp",
+    "cloudbuild",
+    "artifact",
+    "registry"
+  ],
+  "author": "drew.mercer@brandlive.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandlive1941/terraform-module-cloudbuild-artifact/issues"
+  },
+  "homepage": "https://github.com/brandlive1941/terraform-module-cloudbuild-artifact#readme",
+  "devDependencies": {
+    "@semantic-release/github": "^8.0.4",
+    "git-cz": "^4.9.0",
+    "semantic-release": "^19.0.3"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    {
+      "npmPublish": false
+    }
+  ],
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
+}
