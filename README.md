@@ -39,6 +39,17 @@ Outputs
 =======
 
 
+Development
+=======
+
+Thise repo uses `cz`[https://github.com/semantic-release/commit-analyzer/] to manage semantic versioning. Please use the following set of commands to initialize your development environment and commit changes:
+
+`asdf install`
+`npm install`
+`npm install -g commitizen`
+`git add *`
+`git cz`
+
 Authors
 =======
 
