@@ -1,21 +1,25 @@
 variable "project_id" {
-  type = string
+  description = "project id"
+  type        = string
 }
 
 variable "region" {
-  type    = string
-  default = "us-west1"
+  description = "region"
+  type        = string
 }
 
 variable "github_org" {
-  type = string
+  description = "github organization"
+  type        = string
 }
 
 variable "repository" {
-  type = string
+  description = "github repository"
+  type        = string
 }
 
 variable "triggers" {
+  description = "build triggers"
   type = map(object({
     branch   = string
     filename = string
@@ -29,29 +33,35 @@ variable "triggers" {
 }
 
 variable "image_name" {
-  type = string
+  description = "docker image name"
+  type        = string
 }
 
 variable "artifact_repo_name" {
-  type = string
+  description = "artifact repository name"
+  type        = string
 }
 
 variable "dockerfile_path" {
-  type    = string
-  default = "Dockerfile"
+  description = "dockerfile path"
+  type        = string
+  default     = "Dockerfile"
 }
 
 variable "cloudbuild_file" {
-  type    = string
-  default = "cloudbuild.yaml"
+  description = "cloudbuild file"
+  type        = string
+  default     = "cloudbuild.yaml"
 }
 
 variable "service_name" {
-  type    = string
-  default = ""
+  description = "cloud run service name"
+  type        = string
+  default     = ""
 }
 
 variable "gke_cluster" {
-  type    = string
-  default = ""
+  description = "gke cluster"
+  type        = string
+  default     = ""
 }
