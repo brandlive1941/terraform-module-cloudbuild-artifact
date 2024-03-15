@@ -3,9 +3,10 @@ variable "project_id" {
   type        = string
 }
 
-variable "region" {
-  description = "region"
+variable "registry_location" {
+  description = "image location"
   type        = string
+  default     = "us"
 }
 
 variable "github_org" {
@@ -21,6 +22,7 @@ variable "repository" {
 variable "triggers" {
   description = "build triggers"
   type = map(object({
+    region   = string
     branch   = string
     filename = string
   }))
@@ -58,6 +60,11 @@ variable "name_prefix" {
   description = "cloud run service name prefix"
   type        = string
   default     = ""
+}
+
+variable "service_regions" {
+  description = "regions to push images to"
+  type        = string
 }
 
 variable "gke_cluster" {
