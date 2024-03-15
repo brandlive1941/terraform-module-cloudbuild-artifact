@@ -54,7 +54,7 @@ npm install -g commitizen
 git checkout -b BRANCH_NAME
 git add *
 git cz
-git push origin BRANC_NAME
+git push origin BRANCH_NAME
 ```
 
 Authors
