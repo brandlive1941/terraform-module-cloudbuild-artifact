@@ -9,6 +9,13 @@ variable "registry_location" {
   default     = "us"
 }
 
+variable "default_region" {
+  description = "default region"
+  type        = string
+  default     = "us-west1"
+
+}
+
 variable "github_org" {
   description = "github organization"
   type        = string
@@ -22,7 +29,6 @@ variable "repository" {
 variable "triggers" {
   description = "build triggers"
   type = map(object({
-    region   = string
     branch   = string
     filename = string
   }))
