@@ -8,14 +8,14 @@ Module Input Variables
 
 - `project_id` - GCP project id
 - `region` - Region
-- `github_org` - Github organization name
-- `repository` - Github repository name
+- `github_org` - Github Organization name
+- `repository` - Github Repository name
 - `triggers` - Branches to trigger docker builds on
-- `image_name` - Optional: Docker image name
-- `artifact_repo_name` - Optional: Artifact registry repository name
+- `image_name` - Optional: Docker Image name
+- `artifact_repo_name` - Optional: Artifact Registry repository name
 - `dockerfile_path` - Optional: Dockerfile location
 - `cloudbuild_file` - Optional: Cloudbuild.yaml file location/name
-- `service_name` - Optional: Cloudrun service name
+- `name_prefix` - Optional: Cloudrun Service name prefix
 - `gke_cluster` - Optional: GKE Cluster 
 
 Usage
@@ -31,7 +31,7 @@ module "cloudbuild" {
   image_name         = local.image
   artifact_repo_name = local.artifact
   dockerfile_path    = var.dockerfile_path
-  service_name       = local.service
+  name_prefix        = local.name_prefix
 }
 ```
 
@@ -44,11 +44,11 @@ Development
 
 Thise repo uses `cz`[https://github.com/semantic-release/commit-analyzer/] to manage semantic versioning. Please use the following set of commands to initialize your development environment and commit changes:
 
-`asdf install`
-`npm install`
-`npm install -g commitizen`
-`git add *`
-`git cz`
+```asdf install
+npm install
+npm install -g commitizen
+git add *
+git cz```
 
 Authors
 =======

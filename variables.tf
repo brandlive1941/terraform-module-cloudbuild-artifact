@@ -54,8 +54,8 @@ variable "cloudbuild_file" {
   default     = "cloudbuild.yaml"
 }
 
-variable "service_name" {
-  description = "cloud run service name"
+variable "name_prefix" {
+  description = "cloud run service name prefix"
   type        = string
   default     = ""
 }

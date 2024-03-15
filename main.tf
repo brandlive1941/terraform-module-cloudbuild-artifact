@@ -1,3 +1,7 @@
+locals {
+  service_name = "${var.name_prefix}-${var.region}-cr"
+}
+
 resource "google_cloudbuild_trigger" "github_filename_trigger" {
   for_each = var.triggers
   provider = google-beta
@@ -21,7 +25,7 @@ resource "google_cloudbuild_trigger" "github_filename_trigger" {
     _IMAGE_NAME         = var.image_name
     _DOCKERFILE_PATH    = var.dockerfile_path
     _REGION_NAME        = var.region
-    _SERVICE_NAME       = var.service_name
+    _SERVICE_NAME       = local.service_name
     _GKE_CLUSTER        = var.gke_cluster
   }
 }
