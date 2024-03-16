@@ -68,11 +68,6 @@ variable "name_prefix" {
   default     = ""
 }
 
-variable "service_regions" {
-  description = "regions to push images to"
-  type        = string
-}
-
 variable "gke_cluster" {
   description = "gke cluster"
   type        = string
