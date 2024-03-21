@@ -35,7 +35,7 @@ variable "triggers" {
   default = {
     dev = {
       branch   = "dev"
-      filename = "cloudbuild.yaml"
+      filename = "/cloudbuild.yaml"
     }
   }
 }
@@ -50,8 +50,14 @@ variable "artifact_repo_name" {
   type        = string
 }
 
-variable "dockerfile_path" {
-  description = "dockerfile path"
+variable "build_path" {
+  description = "build path"
+  type        = string
+  default     = "."
+}
+
+variable "dockerfile" {
+  description = "dockerfile name"
   type        = string
   default     = "Dockerfile"
 }
