@@ -1,3 +1,10 @@
+resource "google_artifact_registry_repository" "repo" {
+  location      = var.registry_location
+  repository_id = var.artifact_repo_name
+  description   = "${var.artifact_repo_name} ${var.github_org}/${var.repository}"
+  format        = "DOCKER"
+}
+
 resource "google_cloudbuild_trigger" "github_filename_trigger" {
   for_each = var.triggers
   provider = google-beta
@@ -26,11 +33,4 @@ resource "google_cloudbuild_trigger" "github_filename_trigger" {
     _SERVICE_NAME       = "${var.name_prefix}-cr"
     _GKE_CLUSTER        = var.gke_cluster
   }
-}
-
-resource "google_artifact_registry_repository" "repo" {
-  location      = var.registry_location
-  repository_id = var.artifact_repo_name
-  description   = "${var.artifact_repo_name} ${var.github_org}/${var.repository}"
-  format        = "DOCKER"
 }
